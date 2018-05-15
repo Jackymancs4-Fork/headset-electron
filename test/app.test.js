@@ -34,7 +34,7 @@ describe('application', function () {
 
   // Tests that both windows were created
   it('start application', () => app.client
-    .waitUntilWindowLoaded().getWindowCount()
+    .waitUntilWindowLoaded(8000).getWindowCount()
     .then(count => assert.equal(count, 2, 'Wrong number of windows'))
     .then(() => delay(2000)) // Inserts a delay so player window can minimize
     .getMainProcessLogs()
